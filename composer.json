@@ -1,0 +1,9 @@
+{
+    "require": {
+        "twig/twig": "^2.0",
+        "php-amqplib/php-amqplib": "^2.10",
+        "guzzlehttp/guzzle": "^6.3",
+      "ext-json": "*",
+      "ext-pdo": "*"
+    }
+}

@@ -1,0 +1,37 @@
+<div class="container">
+    <h3>{{ table_name }}
+        {% if rc_table %}
+            <span class="badge badge-secondary rc_branch_name">{{ rc_branch_name }}</span>
+        {% endif %}
+    </h3>
+    <table class="table table-striped table-hover {{ class_name }}">
+        <thead>
+        <tr class="d-flex">
+            <th scope="col" class="col-sm-1">#</th>
+            <th scope="col" class="col-sm-5">Branch name</th>
+            <th scope="col" class="col-sm-6">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for branch in branch_data %}
+            <tr class="d-flex">
+                <th scope="row" class="number col-sm-1"></th>
+                <td class="col-sm-5">{{ branch.name }}</td>
+                <td class="col-sm-6">
+                    <button type="button"
+                            class="btn
+{% if table_name == "Branches" %}
+btn-outline-success
+{% elseif table_name == "Release candidate" %}
+btn-outline-danger
+{% endif %}
+{{ class_name }}-button active-button action-button"
+                            id="id_{{ branch.id }}">
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    </button>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,35 @@
+table {
+    counter-reset: heading;
+}
+
+table .number:before {
+    counter-increment: heading;
+    content: counter(heading);
+}
+
+.active-button .spinner-border {
+    display: none;
+}
+
+.branches-button.active-button:before {
+    content: 'Add to rc';
+}
+
+.release_candidate-button.active-button:before {
+    content: 'Remove from rc';
+}
+
+.request-button, .process-button {
+    pointer-events: none;
+}
+
+.request-button:after {
+    content: 'Sending request...';
+}
+
+.process-button:after {
+    content: 'In process...';
+}
+
+
+
